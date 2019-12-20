@@ -25,7 +25,7 @@
     ```
 
 
-5. If RBAC is enabled in your cluster, create a cluster role and bind it to the service account, created in Step 1:
+5. If RBAC is enabled in your cluster, create a cluster role and bind it to the service account:
     ```
     $ kubectl apply -f rbac/rbac.yaml
     ```
