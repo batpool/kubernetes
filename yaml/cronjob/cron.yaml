@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: test-job
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: test-job
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: busybox
+            name: test-job
+            resources: {}
+            command: ["echo", "Hello B4TMAN"]
+          restartPolicy: Never
+  schedule: '* * * * *'
+status: {}
