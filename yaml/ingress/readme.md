@@ -1,6 +1,5 @@
 # Installing the Ingress Controller
 
-# i have created both YAML and JSON file choice of use
 
 ## Create a Namespace, a SA, the Default Secret, the Customization Config Map, and Custom Resource Definitions
 
