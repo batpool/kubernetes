@@ -1,3 +1,3 @@
 ## Configmap demo
 
-![Configmap demo](demo.jpeg)
+![Configmap demo](demo.jpg)
