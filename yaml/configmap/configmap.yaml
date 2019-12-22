@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  MSG91_AUTH_KEY: 118138ALUj75nLRWiB577f54bc
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: test-configmap
+  namespace: test-configmap

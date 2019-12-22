@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: satya
+  name: satya
+  namespace: test-configmap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: satya
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: satya
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        envFrom:
+        - configMapRef:
+            name: test-configmap
+status: {}
