@@ -1,0 +1,42 @@
+apiVersion: v1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: satya
+  name: satya
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: satya
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: satya
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:
+          - name: nfs-share
+            # mount point in container
+            mountPath: /usr/share/nginx/html
+      initContainers:
+      - name: busybox
+        image: busybox
+        volumeMounts:
+        - name: nfs-share
+          mountPath: /nginx
+        command: ["/bin/sh"]
+        args: ["-c", "echo '<h1>Dynamic NFS</h1>' > /nginx/index.html"]
+      volumes:
+        - name: nfs-share
+          persistentVolumeClaim:
+            # PVC name you created
+            claimName: nfs-client
+status: {}
